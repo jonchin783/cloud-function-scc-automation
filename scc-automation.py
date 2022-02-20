@@ -3,8 +3,7 @@ from googleapiclient.discovery import build
 
 def create_bucket_class_location(bucket_name):
     """
-    Create a new bucket in the US region with the coldline storage
-    class
+    Create a new bucket in the Asia region with the coldline storage class
     """
     # bucket_name = "your-new-bucket-name"
 
@@ -108,5 +107,5 @@ def hello_pubsub(event, context):
         create_scc_notifications(org_id, project_name, scc_config_id, pubsub_topic)
         create_dataflow("jonchin-gps-argolis", project_name + "-dataflow", pubsub_topic, "gs://" + project_name + "/")
     else:
-        name = 'World'
-    print('Hello {}!'.format(value))
+        name = 'Not data in pubsub event stream'
+    print('Output {}!'.format(value))
